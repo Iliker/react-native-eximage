@@ -43,13 +43,14 @@ RCT_EXPORT_METHOD(clearCache:(RCTResponseSenderBlock)callback) {
     }];
 }
 
-- (NSDictionary *)customDirectEventTypes {
-    return @{
-             @"exLoadStart": @{@"registrationName": @"onExLoadStart"},
-             @"exLoadProgress": @{@"registrationName": @"onExLoadProgress"},
-             @"exLoadError": @{@"registrationName": @"onExLoadError"},
-             @"exLoaded": @{@"registrationName": @"onExLoaded"}
-             };
+- (NSArray *)customDirectEventTypes
+{
+    return @[
+             @"loadStart",
+             @"progress",
+             @"error",
+             @"load",
+             ];
 }
 
 @end
